@@ -3,14 +3,7 @@ import Navbar from "../components/NavBar";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Button, Grid, SvgIcon } from "@mui/material";
-import FlightIcon from "@mui/icons-material/Flight";
-import ApartmentIcon from "@mui/icons-material/Apartment";
-import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import WhereToVoteIcon from "@mui/icons-material/WhereToVote";
-import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
-import FlightLandIcon from '@mui/icons-material/FlightLand';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { images, icons } from "../../constants";
 
 const primary = "#1498e4";
 
@@ -28,10 +21,11 @@ export default function Home() {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 2,
+      items: 1,
       slidesToSlide: 1,
     },
   };
+
   return (
     <div>
       <Navbar />
@@ -43,11 +37,10 @@ export default function Home() {
           responsive={responsive}
           containerclassName="carousel-container"
           infinite={true}
-          // centerMode={true}
         >
           <div style={{ height: 200, width: 380, padding: 20, margin: 20 }}>
             <img
-              src={require("../../assets/travel1.avif")}
+              src={images.travel1}
               style={{objectFit: 'cover'}}
               width={"100%"}
               height={"100%"}
@@ -55,7 +48,7 @@ export default function Home() {
           </div>
           <div style={{ height: 200, width: 380, padding: 20, margin: 20 }}>
             <img
-              src={require("../../assets/travel2.avif")}
+              src={images.travel2}
               style={{objectFit: 'cover'}}
               width={"100%"}
               height={"100%"}
@@ -64,7 +57,7 @@ export default function Home() {
 
           <div style={{ height: 200, width: 380, padding: 20, margin: 20 }}>
             <img
-              src={require("../../assets/travel3.avif")}
+              src={images.travel3}
               style={{objectFit: 'cover'}}
               width={"100%"}
               height={"100%"}
@@ -81,7 +74,7 @@ export default function Home() {
             // marginTop: "10px",
           }}
         >
-          <Grid container xs={4}>
+          <Grid container xs={6}>
             <Grid item xs>
               <div
                 style={{
@@ -90,9 +83,10 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onClick={() => alert('Flights button is clicked!')}
               >
                 <SvgIcon
-                  component={FlightIcon}
+                  component={icons.FlightIcon}
                   color={"primary"}
                   sx={{ fontSize: "35px" }}
                 />
@@ -107,9 +101,10 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onClick={() => alert('Hotels button is clicked!')}
               >
                 <SvgIcon
-                  component={ApartmentIcon}
+                  component={icons.ApartmentIcon}
                   color={"disabled"}
                   sx={{ fontSize: "35px" }}
                 />
@@ -124,9 +119,10 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onClick={() => alert('Buses button is clicked!')}
               >
                 <SvgIcon
-                  component={DirectionsBusIcon}
+                  component={icons.DirectionsBusIcon}
                   color={"disabled"}
                   sx={{ fontSize: "35px" }}
                 />
@@ -141,9 +137,10 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onClick={() => alert('Cars button is clicked!')}
               >
                 <SvgIcon
-                  component={DirectionsCarIcon}
+                  component={icons.DirectionsCarIcon}
                   color={"disabled"}
                   sx={{ fontSize: "35px" }}
                 />
@@ -158,9 +155,10 @@ export default function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onClick={() => alert('Balloons button is clicked!')}
               >
                 <SvgIcon
-                  component={WhereToVoteIcon}
+                  component={icons.WhereToVoteIcon}
                   color={"disabled"}
                   sx={{ fontSize: "35px" }}
                 />
@@ -382,7 +380,7 @@ export default function Home() {
                   flexDirection: 'row',
                   justifyContent: 'space-evenly',
                   borderRight: '0.1px dotted grey',
-                }}><SvgIcon component={FlightTakeoffIcon} sx={{ fontSize: "35px" }} color="disabled"/>
+                }}><SvgIcon component={icons.FlightTakeoffIcon} sx={{ fontSize: "35px" }} color="disabled"/>
                   <input type={'text'} placeholder="From" style={{border: '1px solid white', width: '70%'}}/>
                 </div>
                 </Grid>
@@ -392,7 +390,7 @@ export default function Home() {
                   flexDirection: 'row',
                   justifyContent: 'space-evenly',
                   borderRight: '0.1px dotted grey',
-                }}><SvgIcon component={FlightLandIcon} sx={{ fontSize: "35px" }} color="disabled"/>
+                }}><SvgIcon component={icons.FlightLandIcon} sx={{ fontSize: "35px" }} color="disabled"/>
                   <input type={'text'} placeholder="To" style={{border: '1px solid white', width: '70%'}}/>
                 </div>
                 </Grid>
@@ -402,7 +400,7 @@ export default function Home() {
                   flexDirection: 'row',
                   justifyContent: 'space-evenly',
                 }}>
-                  <SvgIcon component={CalendarMonthIcon} sx={{ fontSize: "35px" }} color="disabled"/>
+                  <SvgIcon component={icons.CalendarMonthIcon} sx={{ fontSize: "35px" }} color="disabled"/>
                   <div style={{
                     display: 'flex',
                     flexDirection: 'column',
