@@ -1,9 +1,8 @@
 import logo from "./logo.svg";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./Pages/Home/Home";
+import Home from "./pages/home/Home";
 import "./App.css";
-import NavBar from "./Pages/components/NavBar";
 
 function App() {
   return (

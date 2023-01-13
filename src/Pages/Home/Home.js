@@ -1,183 +1,117 @@
 import React from "react";
 import Navbar from "../components/NavBar";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { Button, Grid, SvgIcon } from "@mui/material";
-import { images, icons } from "../../constants";
+import { icons, myColor, sizes } from "../../constants";
+import {
+  HeaderH1,
+  TravelIconDiv,
+  TravelTypeP,
+  ContainerDiv,
+  ContainerDiv1,
+  FlightTypeDiv,
+  LabelSize,
+  DivFlexAlign,
+  InternationalLabel,
+  NewTextSpan,
+  SpanTextSize,
+  CitizenDiv,
+  CitizenP,
+  TripPassengerDiv,
+  TripPassengerSelect,
+  FlightFromToDiv,
+  FlightFromToInput,
+  DepartureDiv,
+  DepartureDiv1,
+  DepartureSpan,
+  DepartureDateSpan,
+} from "./components/HomeStyle";
+import { HomeCarousel } from "./components";
 
-const primary = "#1498e4";
 
 export default function Home() {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
-
   return (
     <div>
       <Navbar />
       <div>
-        <h1 style={{ color: primary, textAlign: "center", fontSize: 50 }}>
+        <HeaderH1 color={myColor.primary} size={sizes.largeTitle}>
           Travel is easy with us
-        </h1>
-        <Carousel
-          responsive={responsive}
-          containerclassName="carousel-container"
-          infinite={true}
-        >
-          <div style={{ height: 200, width: 380, padding: 20, margin: 20 }}>
-            <img
-              src={images.travel1}
-              style={{objectFit: 'cover'}}
-              width={"100%"}
-              height={"100%"}
-            />
-          </div>
-          <div style={{ height: 200, width: 380, padding: 20, margin: 20 }}>
-            <img
-              src={images.travel2}
-              style={{objectFit: 'cover'}}
-              width={"100%"}
-              height={"100%"}
-            />
-          </div>
+        </HeaderH1>
 
-          <div style={{ height: 200, width: 380, padding: 20, margin: 20 }}>
-            <img
-              src={images.travel3}
-              style={{objectFit: 'cover'}}
-              width={"100%"}
-              height={"100%"}
-            />
-          </div>
-        </Carousel>
+        <HomeCarousel />
 
+        {/* Travel Type */}
         <Grid
           container
           xs={12}
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            // marginTop: "10px",
           }}
         >
           <Grid container xs={6}>
             <Grid item xs>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onClick={() => alert('Flights button is clicked!')}
+              <TravelIconDiv
+                onClick={() => alert("Flights button is clicked!")}
               >
                 <SvgIcon
                   component={icons.FlightIcon}
                   color={"primary"}
-                  sx={{ fontSize: "35px" }}
+                  sx={{ fontSize: sizes.iconSize }}
                 />
-                <p style={{ fontSize: "14px", color: primary }}>Flights</p>
-              </div>
+                <TravelTypeP size={sizes.h5} color={myColor.primary}>
+                  Flights
+                </TravelTypeP>
+              </TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onClick={() => alert('Hotels button is clicked!')}
-              >
+              <TravelIconDiv onClick={() => alert("Hotels button is clicked!")}>
                 <SvgIcon
                   component={icons.ApartmentIcon}
                   color={"disabled"}
-                  sx={{ fontSize: "35px" }}
+                  sx={{ fontSize: sizes.iconSize }}
                 />
-                <p style={{ fontSize: "14px" }}>Hotels</p>
-              </div>
+                <TravelTypeP size={sizes.h5}>Hotels</TravelTypeP>
+              </TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onClick={() => alert('Buses button is clicked!')}
-              >
+              <TravelIconDiv onClick={() => alert("Buses button is clicked!")}>
                 <SvgIcon
                   component={icons.DirectionsBusIcon}
                   color={"disabled"}
-                  sx={{ fontSize: "35px" }}
+                  sx={{ fontSize: sizes.iconSize }}
                 />
-                <p style={{ fontSize: "14px" }}>Buses</p>
-              </div>
+                <TravelTypeP size={sizes.h5}>Buses</TravelTypeP>
+              </TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onClick={() => alert('Cars button is clicked!')}
-              >
+              <TravelIconDiv onClick={() => alert("Cars button is clicked!")}>
                 <SvgIcon
                   component={icons.DirectionsCarIcon}
                   color={"disabled"}
-                  sx={{ fontSize: "35px" }}
+                  sx={{ fontSize: sizes.iconSize }}
                 />
-                <p style={{ fontSize: "14px" }}>Cars</p>
-              </div>
+                <TravelTypeP size={sizes.h5}>Cars</TravelTypeP>
+              </TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onClick={() => alert('Balloons button is clicked!')}
+              <TravelIconDiv
+                onClick={() => alert("Balloons button is clicked!")}
               >
                 <SvgIcon
                   component={icons.WhereToVoteIcon}
                   color={"disabled"}
-                  sx={{ fontSize: "35px" }}
+                  sx={{ fontSize: sizes.iconSize }}
                 />
-                <p style={{ fontSize: "14px" }}>Balloons</p>
-              </div>
+                <TravelTypeP size={sizes.h5}>Balloons</TravelTypeP>
+              </TravelIconDiv>
             </Grid>
           </Grid>
         </Grid>
+        {/* Travel Type */}
 
-        <div
-          style={{
-            width: "100%",
-            background: "linear-gradient(#1498e4,#013874)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div style={{ width: "80%" }}>
+        {/* Flight From To Departure */}
+        <ContainerDiv>
+          <ContainerDiv1>
             <Grid container>
               <Grid
                 container
@@ -197,9 +131,9 @@ export default function Home() {
                   sx={{
                     backgroundColor: "white",
                     borderRadius: "5px 5px 0 0",
-                    padding: '5px',
+                    padding: "5px",
                     mt: 4,
-                    borderBottom: '2px solid #1296E1'
+                    borderBottom: "2px solid #1296E1",
                   }}
                 >
                   <Grid
@@ -208,22 +142,8 @@ export default function Home() {
                     sm={3}
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        width: "100%",
-                        justifyContent: "space-evenly",
-                        flexWrap: "wrap",
-                        marginBottom: 5,
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-end",
-                        }}
-                      >
+                    <FlightTypeDiv>
+                      <DivFlexAlign>
                         <input
                           type="radio"
                           id="Domestic"
@@ -231,39 +151,32 @@ export default function Home() {
                           value="Domestic"
                           checked
                         />
-                        <label for="Domestic" style={{ fontSize: 12 }}>
+                        <LabelSize for="Domestic" size={sizes.h6}>
                           Domestic
-                        </label>
-                      </div>
+                        </LabelSize>
+                      </DivFlexAlign>
 
-                      <div style={{ display: "flex", alignItems: "flex-end" }}>
+                      <DivFlexAlign>
                         <input
                           type="radio"
                           id="International"
                           name="drone"
                           value="International"
                         />
-                        <label
-                          for="International"
-                          style={{ display: "flex", flexDirection: "column" }}
-                        >
-                          <span
-                            style={{
-                              color: "white",
-                              fontSize: 8,
-                              textAlign: "center",
-                              alignSelf: 'center',
-                              backgroundColor: '#ED6C03',
-                              width: 30,
-                              borderRadius: 2
-                            }}
+                        <InternationalLabel for="International">
+                          <NewTextSpan
+                            color={myColor.white}
+                            size={sizes.h8}
+                            bgColor={myColor.orange}
                           >
                             New!
-                          </span>
-                          <span style={{ fontSize: 12 }}>International</span>
-                        </label>
-                      </div>
-                    </div>
+                          </NewTextSpan>
+                          <SpanTextSize size={sizes.h6}>
+                            International
+                          </SpanTextSize>
+                        </InternationalLabel>
+                      </DivFlexAlign>
+                    </FlightTypeDiv>
                   </Grid>
                   <Grid
                     item
@@ -271,24 +184,9 @@ export default function Home() {
                     sm={3}
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        width: "100%",
-                        justifyContent: "space-evenly",
-                        flexWrap: "wrap",
-                        marginTop: 7,
-                        alignItems: "flex-end",
-                      }}
-                    >
-                      <div style={{ fontSize: 12 }}>Myanmar Citizens:</div>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-end",
-                        }}
-                      >
+                    <CitizenDiv>
+                      <CitizenP size={sizes.h6}>Myanmar Citizens:</CitizenP>
+                      <DivFlexAlign>
                         <input
                           type="radio"
                           id="Yes"
@@ -296,17 +194,12 @@ export default function Home() {
                           value="Yes"
                           checked
                         />
-                        <label for="Yes" style={{ fontSize: 12 }}>
+                        <LabelSize for="Yes" size={sizes.h6}>
                           Yes
-                        </label>
-                      </div>
+                        </LabelSize>
+                      </DivFlexAlign>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-end",
-                        }}
-                      >
+                      <DivFlexAlign>
                         <input
                           type="radio"
                           id="No"
@@ -314,11 +207,11 @@ export default function Home() {
                           value="No"
                           checked
                         />
-                        <label for="No" style={{ fontSize: 12 }}>
+                        <LabelSize for="No" size={sizes.h6}>
                           No
-                        </label>
-                      </div>
-                    </div>
+                        </LabelSize>
+                      </DivFlexAlign>
+                    </CitizenDiv>
                   </Grid>
                   <Grid
                     item
@@ -326,97 +219,84 @@ export default function Home() {
                     sm={3}
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        width: "100%",
-                        justifyContent: "space-evenly",
-                        flexWrap: "wrap",
-                        marginTop: 7,
-                        // alignItems: 'flex-end',
-                      }}
-                    >
-                      <span style={{ fontSize: 12 }}>Trip Type:</span>
-                      <select name="tripType" id="tripType" style={{border: '1px solid white'}}>
+                    <TripPassengerDiv>
+                      <SpanTextSize size={sizes.h6}>Trip Type:</SpanTextSize>
+                      <TripPassengerSelect name="tripType" id="tripType">
                         <option value="One Way Flight">One Way Flight</option>
                         <option value="Round Trip">Round Trip</option>
-                      </select>
-                    </div>
+                      </TripPassengerSelect>
+                    </TripPassengerDiv>
                   </Grid>
                   <Grid item xs={12} sm={3}>
-                  <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        width: "100%",
-                        justifyContent: "space-evenly",
-                        flexWrap: "wrap",
-                        marginTop: 7,
-                        // alignItems: 'flex-end',
-                      }}
-                    >
-                      <span style={{ fontSize: 12 }}>Passenger:</span>
-                      <select name="passenger" id="passenger" style={{border: '1px solid white'}}>
+                    <TripPassengerDiv>
+                      <SpanTextSize size={sizes.h6}>Passenger:</SpanTextSize>
+                      <TripPassengerSelect name="passenger" id="passenger">
                         <option value="1 Adult">1 Adult</option>
-                      </select>
-                    </div>
+                      </TripPassengerSelect>
+                    </TripPassengerDiv>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid container xs={12} md={12} sx={{
+              <Grid
+                container
+                xs={12}
+                md={12}
+                sx={{
                   display: "flex",
                   flexWrap: "wrap",
                   justifyContent: "center",
                   alignitem: "center",
-                  backgroundColor: 'white',
+                  backgroundColor: "white",
                   borderRadius: 3,
-                  padding: '10px',
+                  padding: "10px",
                   mb: 4,
-                }}>
+                }}
+              >
                 <Grid item xs={12} md={4}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-evenly',
-                  borderRight: '0.1px dotted grey',
-                }}><SvgIcon component={icons.FlightTakeoffIcon} sx={{ fontSize: "35px" }} color="disabled"/>
-                  <input type={'text'} placeholder="From" style={{border: '1px solid white', width: '70%'}}/>
-                </div>
+                  <FlightFromToDiv>
+                    <SvgIcon
+                      component={icons.FlightTakeoffIcon}
+                      sx={{ fontSize: sizes.iconSize }}
+                      color="disabled"
+                    />
+                    <FlightFromToInput type={"text"} placeholder="From" />
+                  </FlightFromToDiv>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-evenly',
-                  borderRight: '0.1px dotted grey',
-                }}><SvgIcon component={icons.FlightLandIcon} sx={{ fontSize: "35px" }} color="disabled"/>
-                  <input type={'text'} placeholder="To" style={{border: '1px solid white', width: '70%'}}/>
-                </div>
+                  <FlightFromToDiv>
+                    <SvgIcon
+                      component={icons.FlightLandIcon}
+                      sx={{ fontSize: sizes.iconSize }}
+                      color="disabled"
+                    />
+                    <FlightFromToInput type={"text"} placeholder="To" />
+                  </FlightFromToDiv>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-evenly',
-                }}>
-                  <SvgIcon component={icons.CalendarMonthIcon} sx={{ fontSize: "35px" }} color="disabled"/>
-                  <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent:'center',
-                    width: '50%'
-                  }}>
-                    <span style={{color: 'grey', fontSize: 10}}>Departure Date</span>
-                    <span style={{fontWeight: 'bold', fontSize: 14}}>Sat, 11 Jun 2022</span>
-                  </div>
-                  <Button variant="contained" color="warning">Search</Button>
-                </div>
+                  <DepartureDiv>
+                    <SvgIcon
+                      component={icons.CalendarMonthIcon}
+                      sx={{ fontSize: sizes.iconSize }}
+                      color="disabled"
+                    />
+                    <DepartureDiv1>
+                      <DepartureSpan color={myColor.grey} size={sizes.h7}>
+                        Departure Date
+                      </DepartureSpan>
+                      <DepartureDateSpan size={sizes.h5}>
+                        Sat, 11 Jun 2022
+                      </DepartureDateSpan>
+                    </DepartureDiv1>
+                    <Button variant="contained" color="warning">
+                      Search
+                    </Button>
+                  </DepartureDiv>
                 </Grid>
               </Grid>
             </Grid>
-          </div>
-        </div>
+          </ContainerDiv1>
+        </ContainerDiv>
+        {/* Flight From To Departure */}
       </div>
     </div>
   );
