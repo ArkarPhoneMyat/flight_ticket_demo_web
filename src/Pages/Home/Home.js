@@ -3,27 +3,7 @@ import Navbar from "../components/NavBar";
 import { Button, Grid, SvgIcon } from "@mui/material";
 import { icons, myColor, sizes } from "../../constants";
 import {
-  HeaderH1,
-  TravelIconDiv,
-  TravelTypeP,
-  ContainerDiv,
-  ContainerDiv1,
-  FlightTypeDiv,
-  LabelSize,
-  DivFlexAlign,
-  InternationalLabel,
-  NewTextSpan,
-  SpanTextSize,
-  CitizenDiv,
-  CitizenP,
-  TripPassengerDiv,
-  TripPassengerSelect,
-  FlightFromToDiv,
-  FlightFromToInput,
-  DepartureDiv,
-  DepartureDiv1,
-  DepartureSpan,
-  DepartureDateSpan,
+  Styled
 } from "./components/HomeStyle";
 import { HomeCarousel } from "./components";
 
@@ -33,9 +13,9 @@ export default function Home() {
     <div>
       <Navbar />
       <div>
-        <HeaderH1 color={myColor.primary} size={sizes.largeTitle}>
+        <Styled.HeaderH1 color={myColor.primary} size={sizes.largeTitle}>
           Travel is easy with us
-        </HeaderH1>
+        </Styled.HeaderH1>
 
         <HomeCarousel />
 
@@ -50,7 +30,7 @@ export default function Home() {
         >
           <Grid container xs={6}>
             <Grid item xs>
-              <TravelIconDiv
+              <Styled.TravelIconDiv
                 onClick={() => alert("Flights button is clicked!")}
               >
                 <SvgIcon
@@ -58,43 +38,43 @@ export default function Home() {
                   color={"primary"}
                   sx={{ fontSize: sizes.iconSize }}
                 />
-                <TravelTypeP size={sizes.h5} color={myColor.primary}>
+                <Styled.TravelTypeP size={sizes.h5} color={myColor.primary}>
                   Flights
-                </TravelTypeP>
-              </TravelIconDiv>
+                </Styled.TravelTypeP>
+              </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <TravelIconDiv onClick={() => alert("Hotels button is clicked!")}>
+              <Styled.TravelIconDiv onClick={() => alert("Hotels button is clicked!")}>
                 <SvgIcon
                   component={icons.ApartmentIcon}
                   color={"disabled"}
                   sx={{ fontSize: sizes.iconSize }}
                 />
-                <TravelTypeP size={sizes.h5}>Hotels</TravelTypeP>
-              </TravelIconDiv>
+                <Styled.TravelTypeP size={sizes.h5}>Hotels</Styled.TravelTypeP>
+              </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <TravelIconDiv onClick={() => alert("Buses button is clicked!")}>
+              <Styled.TravelIconDiv onClick={() => alert("Buses button is clicked!")}>
                 <SvgIcon
                   component={icons.DirectionsBusIcon}
                   color={"disabled"}
                   sx={{ fontSize: sizes.iconSize }}
                 />
-                <TravelTypeP size={sizes.h5}>Buses</TravelTypeP>
-              </TravelIconDiv>
+                <Styled.TravelTypeP size={sizes.h5}>Buses</Styled.TravelTypeP>
+              </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <TravelIconDiv onClick={() => alert("Cars button is clicked!")}>
+              <Styled.TravelIconDiv onClick={() => alert("Cars button is clicked!")}>
                 <SvgIcon
                   component={icons.DirectionsCarIcon}
                   color={"disabled"}
                   sx={{ fontSize: sizes.iconSize }}
                 />
-                <TravelTypeP size={sizes.h5}>Cars</TravelTypeP>
-              </TravelIconDiv>
+                <Styled.TravelTypeP size={sizes.h5}>Cars</Styled.TravelTypeP>
+              </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <TravelIconDiv
+              <Styled.TravelIconDiv
                 onClick={() => alert("Balloons button is clicked!")}
               >
                 <SvgIcon
@@ -102,16 +82,16 @@ export default function Home() {
                   color={"disabled"}
                   sx={{ fontSize: sizes.iconSize }}
                 />
-                <TravelTypeP size={sizes.h5}>Balloons</TravelTypeP>
-              </TravelIconDiv>
+                <Styled.TravelTypeP size={sizes.h5}>Balloons</Styled.TravelTypeP>
+              </Styled.TravelIconDiv>
             </Grid>
           </Grid>
         </Grid>
         {/* Travel Type */}
 
         {/* Flight From To Departure */}
-        <ContainerDiv>
-          <ContainerDiv1>
+        <Styled.ContainerDiv>
+          <Styled.ContainerDiv1>
             <Grid container>
               <Grid
                 container
@@ -142,8 +122,8 @@ export default function Home() {
                     sm={3}
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
-                    <FlightTypeDiv>
-                      <DivFlexAlign>
+                    <Styled.FlightTypeDiv>
+                      <Styled.DivFlexAlign>
                         <input
                           type="radio"
                           id="Domestic"
@@ -151,32 +131,32 @@ export default function Home() {
                           value="Domestic"
                           checked
                         />
-                        <LabelSize for="Domestic" size={sizes.h6}>
+                        <Styled.LabelSize for="Domestic" size={sizes.h6}>
                           Domestic
-                        </LabelSize>
-                      </DivFlexAlign>
+                        </Styled.LabelSize>
+                      </Styled.DivFlexAlign>
 
-                      <DivFlexAlign>
+                      <Styled.DivFlexAlign>
                         <input
                           type="radio"
                           id="International"
                           name="drone"
                           value="International"
                         />
-                        <InternationalLabel for="International">
-                          <NewTextSpan
+                        <Styled.InternationalLabel for="International">
+                          <Styled.NewTextSpan
                             color={myColor.white}
                             size={sizes.h8}
                             bgColor={myColor.orange}
                           >
                             New!
-                          </NewTextSpan>
-                          <SpanTextSize size={sizes.h6}>
+                          </Styled.NewTextSpan>
+                          <Styled.SpanTextSize size={sizes.h6}>
                             International
-                          </SpanTextSize>
-                        </InternationalLabel>
-                      </DivFlexAlign>
-                    </FlightTypeDiv>
+                          </Styled.SpanTextSize>
+                        </Styled.InternationalLabel>
+                      </Styled.DivFlexAlign>
+                    </Styled.FlightTypeDiv>
                   </Grid>
                   <Grid
                     item
@@ -184,9 +164,9 @@ export default function Home() {
                     sm={3}
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
-                    <CitizenDiv>
-                      <CitizenP size={sizes.h6}>Myanmar Citizens:</CitizenP>
-                      <DivFlexAlign>
+                    <Styled.CitizenDiv>
+                      <Styled.CitizenP size={sizes.h6}>Myanmar Citizens:</Styled.CitizenP>
+                      <Styled.DivFlexAlign>
                         <input
                           type="radio"
                           id="Yes"
@@ -194,12 +174,12 @@ export default function Home() {
                           value="Yes"
                           checked
                         />
-                        <LabelSize for="Yes" size={sizes.h6}>
+                        <Styled.LabelSize for="Yes" size={sizes.h6}>
                           Yes
-                        </LabelSize>
-                      </DivFlexAlign>
+                        </Styled.LabelSize>
+                      </Styled.DivFlexAlign>
 
-                      <DivFlexAlign>
+                      <Styled.DivFlexAlign>
                         <input
                           type="radio"
                           id="No"
@@ -207,11 +187,11 @@ export default function Home() {
                           value="No"
                           checked
                         />
-                        <LabelSize for="No" size={sizes.h6}>
+                        <Styled.LabelSize for="No" size={sizes.h6}>
                           No
-                        </LabelSize>
-                      </DivFlexAlign>
-                    </CitizenDiv>
+                        </Styled.LabelSize>
+                      </Styled.DivFlexAlign>
+                    </Styled.CitizenDiv>
                   </Grid>
                   <Grid
                     item
@@ -219,21 +199,21 @@ export default function Home() {
                     sm={3}
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
-                    <TripPassengerDiv>
-                      <SpanTextSize size={sizes.h6}>Trip Type:</SpanTextSize>
-                      <TripPassengerSelect name="tripType" id="tripType">
+                    <Styled.TripPassengerDiv>
+                      <Styled.SpanTextSize size={sizes.h6}>Trip Type:</Styled.SpanTextSize>
+                      <Styled.TripPassengerSelect name="tripType" id="tripType">
                         <option value="One Way Flight">One Way Flight</option>
                         <option value="Round Trip">Round Trip</option>
-                      </TripPassengerSelect>
-                    </TripPassengerDiv>
+                      </Styled.TripPassengerSelect>
+                    </Styled.TripPassengerDiv>
                   </Grid>
                   <Grid item xs={12} sm={3}>
-                    <TripPassengerDiv>
-                      <SpanTextSize size={sizes.h6}>Passenger:</SpanTextSize>
-                      <TripPassengerSelect name="passenger" id="passenger">
+                    <Styled.TripPassengerDiv>
+                      <Styled.SpanTextSize size={sizes.h6}>Passenger:</Styled.SpanTextSize>
+                      <Styled.TripPassengerSelect name="passenger" id="passenger">
                         <option value="1 Adult">1 Adult</option>
-                      </TripPassengerSelect>
-                    </TripPassengerDiv>
+                      </Styled.TripPassengerSelect>
+                    </Styled.TripPassengerDiv>
                   </Grid>
                 </Grid>
               </Grid>
@@ -253,49 +233,49 @@ export default function Home() {
                 }}
               >
                 <Grid item xs={12} md={4}>
-                  <FlightFromToDiv>
+                  <Styled.FlightFromToDiv>
                     <SvgIcon
                       component={icons.FlightTakeoffIcon}
                       sx={{ fontSize: sizes.iconSize }}
                       color="disabled"
                     />
-                    <FlightFromToInput type={"text"} placeholder="From" />
-                  </FlightFromToDiv>
+                    <Styled.FlightFromToInput type={"text"} placeholder="From" />
+                  </Styled.FlightFromToDiv>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <FlightFromToDiv>
+                  <Styled.FlightFromToDiv>
                     <SvgIcon
                       component={icons.FlightLandIcon}
                       sx={{ fontSize: sizes.iconSize }}
                       color="disabled"
                     />
-                    <FlightFromToInput type={"text"} placeholder="To" />
-                  </FlightFromToDiv>
+                    <Styled.FlightFromToInput type={"text"} placeholder="To" />
+                  </Styled.FlightFromToDiv>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <DepartureDiv>
+                  <Styled.DepartureDiv>
                     <SvgIcon
                       component={icons.CalendarMonthIcon}
                       sx={{ fontSize: sizes.iconSize }}
                       color="disabled"
                     />
-                    <DepartureDiv1>
-                      <DepartureSpan color={myColor.grey} size={sizes.h7}>
+                    <Styled.DepartureDiv1>
+                      <Styled.DepartureSpan color={myColor.grey} size={sizes.h7}>
                         Departure Date
-                      </DepartureSpan>
-                      <DepartureDateSpan size={sizes.h5}>
+                      </Styled.DepartureSpan>
+                      <Styled.DepartureDateSpan size={sizes.h5}>
                         Sat, 11 Jun 2022
-                      </DepartureDateSpan>
-                    </DepartureDiv1>
+                      </Styled.DepartureDateSpan>
+                    </Styled.DepartureDiv1>
                     <Button variant="contained" color="warning">
                       Search
                     </Button>
-                  </DepartureDiv>
+                  </Styled.DepartureDiv>
                 </Grid>
               </Grid>
             </Grid>
-          </ContainerDiv1>
-        </ContainerDiv>
+          </Styled.ContainerDiv1>
+        </Styled.ContainerDiv>
         {/* Flight From To Departure */}
       </div>
     </div>

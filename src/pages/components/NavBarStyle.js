@@ -12,7 +12,7 @@ const FlagImg = styled.img`
     border-radius: 30px;
 `;
 
-export {
+export const Styled = {
     BlogP,
     FlagImg,
 }

@@ -143,7 +143,7 @@ font-size: ${props => props.size}
 `;
 
 
-export {
+export const Styled = {
   HeaderH1,
   CarouselImageDiv,
   CarouselImage,

@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { images } from "../../../constants";
-import { CarouselImageDiv, CarouselImage } from "./HomeStyle";
+import {Styled} from './HomeStyle'
 
 export default function HomeCarousel() {
   const responsive = {
@@ -28,16 +28,15 @@ export default function HomeCarousel() {
       containerclassName="carousel-container"
       infinite={true}
     >
-      <CarouselImageDiv>
-        <CarouselImage src={images.travel1} />
-      </CarouselImageDiv>
-      <CarouselImageDiv>
-        <CarouselImage src={images.travel2} />
-      </CarouselImageDiv>
-
-      <CarouselImageDiv>
-        <CarouselImage src={images.travel3} />
-      </CarouselImageDiv>
+      <Styled.CarouselImageDiv>
+        <Styled.CarouselImage src={images.travel1} />
+      </Styled.CarouselImageDiv>
+      <Styled.CarouselImageDiv>
+        <Styled.CarouselImage src={images.travel2} />
+      </Styled.CarouselImageDiv>
+      <Styled.CarouselImageDiv>
+        <Styled.CarouselImage src={images.travel3} />
+      </Styled.CarouselImageDiv>
     </Carousel>
   );
 }
