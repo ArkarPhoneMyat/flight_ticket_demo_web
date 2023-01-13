@@ -2,11 +2,8 @@ import React from "react";
 import Navbar from "../components/NavBar";
 import { Button, Grid, SvgIcon } from "@mui/material";
 import { icons, myColor, sizes } from "../../constants";
-import {
-  Styled
-} from "./components/HomeStyle";
+import { Styled } from "./components/HomeStyle";
 import { HomeCarousel } from "./components";
-
 
 export default function Home() {
   return (
@@ -44,7 +41,9 @@ export default function Home() {
               </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <Styled.TravelIconDiv onClick={() => alert("Hotels button is clicked!")}>
+              <Styled.TravelIconDiv
+                onClick={() => alert("Hotels button is clicked!")}
+              >
                 <SvgIcon
                   component={icons.ApartmentIcon}
                   color={"disabled"}
@@ -54,7 +53,9 @@ export default function Home() {
               </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <Styled.TravelIconDiv onClick={() => alert("Buses button is clicked!")}>
+              <Styled.TravelIconDiv
+                onClick={() => alert("Buses button is clicked!")}
+              >
                 <SvgIcon
                   component={icons.DirectionsBusIcon}
                   color={"disabled"}
@@ -64,7 +65,9 @@ export default function Home() {
               </Styled.TravelIconDiv>
             </Grid>
             <Grid item xs>
-              <Styled.TravelIconDiv onClick={() => alert("Cars button is clicked!")}>
+              <Styled.TravelIconDiv
+                onClick={() => alert("Cars button is clicked!")}
+              >
                 <SvgIcon
                   component={icons.DirectionsCarIcon}
                   color={"disabled"}
@@ -77,12 +80,22 @@ export default function Home() {
               <Styled.TravelIconDiv
                 onClick={() => alert("Balloons button is clicked!")}
               >
+                <Styled.NewTextSpan
+                  color={myColor.white}
+                  size={sizes.h8}
+                  bgColor={myColor.orange}
+                  marginTop={'-8px'}
+                >
+                  New!
+                </Styled.NewTextSpan>
                 <SvgIcon
                   component={icons.WhereToVoteIcon}
                   color={"disabled"}
                   sx={{ fontSize: sizes.iconSize }}
                 />
-                <Styled.TravelTypeP size={sizes.h5}>Balloons</Styled.TravelTypeP>
+                <Styled.TravelTypeP size={sizes.h5}>
+                  Balloons
+                </Styled.TravelTypeP>
               </Styled.TravelIconDiv>
             </Grid>
           </Grid>
@@ -148,6 +161,7 @@ export default function Home() {
                             color={myColor.white}
                             size={sizes.h8}
                             bgColor={myColor.orange}
+                            marginTop={'0px'}
                           >
                             New!
                           </Styled.NewTextSpan>
@@ -165,7 +179,9 @@ export default function Home() {
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
                     <Styled.CitizenDiv>
-                      <Styled.CitizenP size={sizes.h6}>Myanmar Citizens:</Styled.CitizenP>
+                      <Styled.CitizenP size={sizes.h6}>
+                        Myanmar Citizens:
+                      </Styled.CitizenP>
                       <Styled.DivFlexAlign>
                         <input
                           type="radio"
@@ -200,7 +216,9 @@ export default function Home() {
                     sx={{ borderRight: "0.1px dotted grey" }}
                   >
                     <Styled.TripPassengerDiv>
-                      <Styled.SpanTextSize size={sizes.h6}>Trip Type:</Styled.SpanTextSize>
+                      <Styled.SpanTextSize size={sizes.h6}>
+                        Trip Type:
+                      </Styled.SpanTextSize>
                       <Styled.TripPassengerSelect name="tripType" id="tripType">
                         <option value="One Way Flight">One Way Flight</option>
                         <option value="Round Trip">Round Trip</option>
@@ -209,8 +227,13 @@ export default function Home() {
                   </Grid>
                   <Grid item xs={12} sm={3}>
                     <Styled.TripPassengerDiv>
-                      <Styled.SpanTextSize size={sizes.h6}>Passenger:</Styled.SpanTextSize>
-                      <Styled.TripPassengerSelect name="passenger" id="passenger">
+                      <Styled.SpanTextSize size={sizes.h6}>
+                        Passenger:
+                      </Styled.SpanTextSize>
+                      <Styled.TripPassengerSelect
+                        name="passenger"
+                        id="passenger"
+                      >
                         <option value="1 Adult">1 Adult</option>
                       </Styled.TripPassengerSelect>
                     </Styled.TripPassengerDiv>
@@ -239,7 +262,10 @@ export default function Home() {
                       sx={{ fontSize: sizes.iconSize }}
                       color="disabled"
                     />
-                    <Styled.FlightFromToInput type={"text"} placeholder="From" />
+                    <Styled.FlightFromToInput
+                      type={"text"}
+                      placeholder="From"
+                    />
                   </Styled.FlightFromToDiv>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -260,7 +286,10 @@ export default function Home() {
                       color="disabled"
                     />
                     <Styled.DepartureDiv1>
-                      <Styled.DepartureSpan color={myColor.grey} size={sizes.h7}>
+                      <Styled.DepartureSpan
+                        color={myColor.grey}
+                        size={sizes.h7}
+                      >
                         Departure Date
                       </Styled.DepartureSpan>
                       <Styled.DepartureDateSpan size={sizes.h5}>

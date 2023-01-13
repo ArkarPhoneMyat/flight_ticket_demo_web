@@ -78,6 +78,7 @@ const NewTextSpan = styled.span`
   background-color: ${(props) => props.bgColor};
   width: 30px;
   border-radius: 2px;
+  margin-top: ${(props) => props.marginTop};
 `;
 
 const CitizenDiv = styled.div`
